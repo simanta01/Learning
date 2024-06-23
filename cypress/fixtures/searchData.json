@@ -1,0 +1,41 @@
+{
+    "inputs": {
+      "[data-testid='_nkw']": "Test By Simanta Khadka",
+      "[name='_ex_kw']": "Automation By Cypress",
+      "[name='_udlo']": "500",
+      "[name='_udhi']": "500",
+      "[name='_sabdlo']": "5000A",
+      "[name='_sabdhi']": "5000ASDSDFSD",
+      "[name='_samilow']": "5000ASDSDFSD",
+      "[name='_samihi']": "5000ASDSDFSD",
+      "[name='_sasl']": "fsdfdslkfdslkfhkdsjhfdshjf"
+    },
+
+    "selects": {
+      "[name='_in_kw']": "Exact words, any order",
+      "[name='_ftrt']": "Started within",
+      "[name='_ftrv']": "4 days",
+      "[name='_salic']": "Qatar",
+      "[name='_saslop']": "Exclude",
+      "[name='_sop']": "Best match",
+      "[name='_dmd']": "Gallery view",
+      "[name='_ipg']": "240"
+    },
+
+    "checks": [
+      "[name='LH_Complete']",
+      "[id='s0-1-17-5[2]-[0]-']",
+      "[value='LH_Auction']",
+      "[value='LH_ItemCondition']",
+      "[name='LH_FR']",
+      "[name='LH_SaleItems']",
+      "[name='LH_Lots']",
+      "[name='LH_Time']",
+      "[name='LH_MIL']",
+      "[name='LH_FS']",
+      "[name='LH_LPickup']",
+      "[value='LH_LocatedIn']",
+      "[id='s0-1-17-7[8]-LH_SpecificSeller']",
+      "[name='_fss']"
+    ]
+}
