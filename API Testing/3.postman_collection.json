@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "38c19c3f-b56b-46be-949b-c282a50a0251",
+		"name": "Learning 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26214016"
+	},
+	"item": [
+		{
+			"name": "Create Pet Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test to check if the status code is 200",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test to check if the response body has the correct pet ID and name",
+							"pm.test(\"Response body has correct pet ID and name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(123456);",
+							"    pm.expect(jsonData.name).to.eql(\"Rex\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 123456,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"dog\"\n  },\n  \"name\": \"Rex\",\n  \"photoUrls\": [\n    \"https://example.com/dog.jpg\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"friendly\"\n    }\n  ],\n  \"status\": \"available\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pet Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test to check if the status code is 200",
+							"pm.test(\"Status code is 200.\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test to check if the response body has the correct pet ID and name",
+							"pm.test(\"Response body has correct pet ID = 123456  and name = Updated and status = not available.\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(123456);",
+							"    pm.expect(jsonData.name).to.eql(\"Updated\");",
+							"    pm.expect(jsonData.status).to.eql(\"not available\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 123456,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"dog and cat\"\n  },\n  \"name\": \"Updated\",\n  \"photoUrls\": [\n    \"https://example.com/dog.jpg\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"friendly\"\n    }\n  ],\n  \"status\": \"not available\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pet by ID Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test to check if the status code is 200",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test to check if the response body has the correct pet ID and name",
+							"pm.test(\"Response body has correct pet ID and name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(123456);",
+							"    pm.expect(jsonData.name).to.eql(\"Updated\");",
+							"});",
+							"",
+							"// Test to check if the category is correct",
+							"pm.test(\"Response body has correct category\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.category.name).to.eql(\"dog and cat\");",
+							"});",
+							"",
+							"// Test to check if the photo URLs are correct",
+							"pm.test(\"Response body has correct photo URLs\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.photoUrls).to.eql([\"https://example.com/dog.jpg\"]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet/123456"
+			},
+			"response": []
+		}
+	]
+}
